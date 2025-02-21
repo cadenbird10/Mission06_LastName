@@ -22,8 +22,7 @@ namespace Mission06Assignment.Models
 
         public string? Director { get; set; }
 
-        [Required]
-        public string Rating { get; set; }
+        public string? Rating { get; set; }
 
         public bool Edited { get; set; }
 
