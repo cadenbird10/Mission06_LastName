@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Mission06_Bird.Models;
 
 namespace Mission06Assignment.Models
 {
@@ -8,6 +9,7 @@ namespace Mission06Assignment.Models
         { 
         } 
 
-        public DbSet<NewMovie> NewMovies { get; set; }
+        public DbSet<NewMovie> Movies { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }

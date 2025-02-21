@@ -1,16 +1,29 @@
-﻿@model NewMovie
+﻿@using Mission06_Bird.Models
+@model NewMovie
 
 <h1>Add a New Movie to the Collection</h1>
 
 <form method="post">
+
+    <input type="hidden" asp-for="MovieId" />
+
     <label asp-for="Title">Title (required):</label>
     <input asp-for="Title" required><br>
 
-    <label asp-for="Director">Director (required):</label>
+    <label asp-for="Director">Director:</label>
     <input asp-for="Director" required><br>
 
     <label asp-for="Year">Year Released (required):</label>
     <input asp-for="Year" min="1888" max="2100" required><br>
+
+    <select asp-for="CategoryId">
+        <option value="">Select a Category</option>
+        @foreach (Category m in ViewBag.Categories)
+        {
+            <option value="@m.CategoryId">@m.CategoryName</option>
+
+        }
+    </select>
 
     <label asp-for="Rating">Rating (required):</label>
     <select asp-for="Rating" required>
@@ -27,13 +40,18 @@
         <option value="false">No</option>
     </select>
 
-
     <label asp-for="LentTo">Lent To:</label>
     <input asp-for="LentTo"><br>
 
+    <label asp-for="CopiedToPlex">CopiedToPlex:</label>
+    <select asp-for="CopiedToPlex">
+        <option value="" disabled selected></option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
 
     <label asp-for="Notes">Notes (max 25 characters):</label>
     <input asp-for="Notes" maxlength="25"><br>
 
-    <button type="submit">Add Movie</button>
+    <button type="submit">Submit Movie</button>
 </form>
