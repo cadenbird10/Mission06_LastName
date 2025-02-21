@@ -16,7 +16,7 @@
     <label asp-for="Year">Year Released (required):</label>
     <input asp-for="Year" min="1888" max="2100" required><br>
 
-    <select asp-for="CategoryId">
+    <select asp-for="CategoryId" required>
         <option value="">Select a Category</option>
         @foreach (Category m in ViewBag.Categories)
         {
