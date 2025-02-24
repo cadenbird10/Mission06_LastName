@@ -23,11 +23,11 @@ namespace Mission06Assignment.Models
         public string? Director { get; set; }
 
         public string? Rating { get; set; }
-
+        [Required]
         public bool Edited { get; set; }
 
         public string? LentTo { get; set; }
-
+        [Required]
         public bool CopiedToPlex { get; set; }
 
         [MaxLength(25)]
